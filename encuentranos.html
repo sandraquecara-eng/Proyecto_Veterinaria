@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <title>Veterinaria Lotso</title>
 </head>
 <body class="font-sans bg-gray-50">
   <!-- HEADER -->
- <header class="topbar">
+   <header class="topbar">
     <div class="container topbar-inner">
       <div class="brand">
         <img src="img/logo.jpg" alt="Logo Veterinaria Lotso" />
@@ -23,9 +23,49 @@
       </nav>
     </div>
   </header>
-<section style="float:right;">
-  <!-- Secciones -->
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d249743.73289546714!2d-77.15258824874829!3d-12.026589994263658!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c5f619ee3ec7%3A0x14206cb9cc452e4a!2sLima!5e0!3m2!1ses-419!2spe!4v1755470626659!5m2!1ses-419!2spe" width="450" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</section>
+
+
+  <!-- SECCIÓN CONTACTO -->
+  <section class="container mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+    
+    <!-- FORMULARIO -->
+    <div class="bg-white shadow-xl rounded-xl p-8">
+      <h2 class="text-2xl font-bold text-indigo-600 mb-6 text-center">Contáctanos</h2>
+      <form class="space-y-5">
+        <div>
+          <label for="nombre" class="block text-sm font-medium text-gray-600">Nombre</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre"
+                 class="w-full mt-2 p-3 border rounded-lg focus:ring-2 focus:ring-indigo-400 focus:outline-none" required>
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-600">Correo electrónico</label>
+          <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com"
+                 class="w-full mt-2 p-3 border rounded-lg focus:ring-2 focus:ring-indigo-400 focus:outline-none" required>
+        </div>
+        <div>
+          <label for="asunto" class="block text-sm font-medium text-gray-600">Asunto</label>
+          <input type="text" id="asunto" name="asunto" placeholder="Motivo de tu mensaje"
+                 class="w-full mt-2 p-3 border rounded-lg focus:ring-2 focus:ring-indigo-400 focus:outline-none">
+        </div>
+        <div>
+          <label for="mensaje" class="block text-sm font-medium text-gray-600">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje..."
+                    class="w-full mt-2 p-3 border rounded-lg focus:ring-2 focus:ring-indigo-400 focus:outline-none min-h-[120px]" required></textarea>
+        </div>
+        <button type="submit"
+                class="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition">
+          Enviar
+        </button>
+      </form>
+    </div>
+
+    <!-- MAPA -->
+    <div class="flex justify-center">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d249743.73289546714!2d-77.15258824874829!3d-12.026589994263658!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c5f619ee3ec7%3A0x14206cb9cc452e4a!2sLima!5e0!3m2!1ses-419!2spe!4v1755470626659!5m2!1ses-419!2spe"
+              width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+  </section>
 </body>
 </html>
