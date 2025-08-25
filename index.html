@@ -3,204 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-   <style>
-    :root{
-      --blue:#0b63d7;
-      --blue-dark:#074a9f;
-      --orange:#ff6b00;
-      --text:#1f2a37;
-      --muted:#667085;
-      --card:#ffffffcc;           /* translúcido para efecto vidrio */
-      --radius:18px;
-      --shadow:0 12px 24px rgba(16,24,40,.12);
-      --border:#e5e7eb;
-      --container:1200px;
-    }
-
-    .hero::before{
-  content:"";position:absolute;inset:0;
-  background:url("img/hero-vet.jpg") center/cover no-repeat;
-  z-index:-2;
-  filter:brightness(.72);
-}
-
-
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Helvetica,Arial,sans-serif;
-      color:var(--text);
-      background:#fff;
-      line-height:1.5;
-    }
-    a{color:var(--blue);text-decoration:none}
-    img{max-width:100%;display:block}
-
-    /* Layout base */
-    .container{max-width:var(--container);margin:0 auto;padding:0 16px}
-
-    /* Header */
-    .topbar{
-      position:sticky;top:0;z-index:1000;
-      background:#fff;border-bottom:1px solid var(--border);
-    }
-    .topbar-inner{
-      display:flex;align-items:center;justify-content:space-between;
-      height:72px;gap:16px;
-    }
-    .brand{display:flex;align-items:center;gap:12px}
-    .brand img{height:70px;width:auto}
-    .nav{display:flex;gap:28px;flex-wrap:wrap}
-    .nav a{
-      font-weight:700;letter-spacing:.3px;
-      color:var(--blue);text-transform:uppercase;
-    }
-    .nav a:hover{color:var(--blue-dark)}
-
-    /* HERO */
-    .hero{
-      position:relative;isolation:isolate;
-      min-height:420px;display:grid;place-items:center;
-      background:#0b63d7;
-      color:#fff;overflow:hidden;
-    }
-    .hero::before{
-      /* tu foto de fondo */
-      content:"";position:absolute;inset:0;
-      background:url("img/hero-vet.jpg") center/cover no-repeat;
-      z-index:-2;
-      filter:brightness(.72);
-    }
-    .hero::after{
-      /* leve degradado para texto legible */
-      content:"";position:absolute;inset:0;
-      background:linear-gradient(180deg,rgba(0,0,0,.10),rgba(0,0,0,.25));
-      z-index:-1;
-    }
-
-    /* Tarjetas de acción sobre el hero */
-    .hero-cards{
-      display:flex;gap:28px;flex-wrap:wrap;justify-content:center;
-      padding:24px;
-      margin-block:18px 32px;
-    }
-    .action-card{
-      width:280px;max-width:94vw;
-      background:var(--card);
-      border:1px solid rgba(255,255,255,.55);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:20px 18px;
-      display:grid;justify-items:center;gap:12px;
-      text-align:center;
-    }
-    .action-card .icon{
-      width:80px;height:80px;border-radius:18px;
-      display:grid;place-items:center;overflow:hidden;background:#fff;
-      border:1px solid var(--border)
-    }
-    .action-card h3{
-      margin:6px 0 2px;font-size:1.1rem;color:#0e1726
-    }
-    .btn{
-      padding:10px 14px;border-radius:12px;border:1px solid #d0d5dd;
-      background:#fff;color:#0e1726;font-weight:600;cursor:pointer;
-    }
-    .btn:hover{border-color:#b8c0cc}
-
-    /* Bloque: Consulta dermatológica (imagen izquierda, lista derecha) */
-    .derma{
-      border-top:1px solid var(--border);
-      background:#fff;
-    }
-    .derma-grid{
-      display:grid;gap:24px;align-items:stretch;
-      grid-template-columns: 1.2fr 1fr;
-    }
-    .derma-left{
-      border-radius:16px;overflow:hidden;
-      border:1px solid var(--border);
-      box-shadow:0 8px 18px rgba(16,24,40,.08);
-      background:#f8fafc;
-    }
-    .derma-right{
-      border-radius:16px;border:1px solid var(--border);
-      padding:20px 22px;background:#fff;
-      box-shadow:0 8px 18px rgba(16,24,40,.06);
-    }
-    .derma-right h3{
-      color:var(--orange);margin:6px 0 10px;font-size:1.25rem
-    }
-    .derma-right h3 strong{color:#d03801}
-    .derma-right ul{margin:10px 0 0 20px}
-    .derma-right li{margin:6px 0}
-
-    /* Sección: Dentro de una consulta */
-    .block-title{
-      margin:36px 0 14px;font-weight:800;color:var(--blue-dark);
-      font-size:1.6rem
-    }
-    .grid-4{
-      display:grid;gap:20px;
-      grid-template-columns:repeat(4,1fr);
-    }
-    .info-card{
-      border:1.5px solid #d1d5db;border-radius:16px;padding:16px 14px;
-      background:#fff;box-shadow:0 6px 14px rgba(16,24,40,.06);
-      display:grid;gap:10px
-    }
-   .info-card .icon {
-  display: block;
-  margin: 0 auto; 
-  width: 40%;
-}
-
-    .info-card h4{margin:0;font-size:1.05rem;text-align:center}
-    .info-card p{color:var(--muted);margin:0;font-size:.95rem}
-    
-    /* PROMO BRAVECTO (imagen izquierda, texto derecha) */
-    .promo{
-      margin:30px 0 50px;
-    }
-    .promo-grid{
-      display:grid;gap:24px;align-items:center;
-      grid-template-columns:1.2fr 1fr;
-    }
-    .promo-left{
-      border-radius:18px;overflow:hidden;border:1px solid var(--border);
-      box-shadow:0 10px 22px rgba(16,24,40,.10);
-    }
-    .promo-right h2{
-      margin:0 0 10px;color:var(--blue-dark)
-    }
-    .promo-right p{
-      margin:0;font-size:1.15rem;line-height:1.6
-    }
-    .promo-right b{color:#d11}
-    .promo-right em{color:var(--blue);font-style:normal;font-weight:800}
-
-    /* Footer */
-    footer {
-            text-align: center;
-            padding: 15px;
-            background: #0066cc;
-            color: white;
-            margin-top: 20px;
-        }
-
-    /* Responsive */
-    @media (max-width: 1024px){
-      .grid-4{grid-template-columns:repeat(2,1fr)}
-      .derma-grid,.promo-grid{grid-template-columns:1fr}
-    }
-    @media (max-width: 640px){
-      .nav{gap:16px}
-      .action-card{width:min(92vw,320px)}
-      .block-title{font-size:1.35rem}
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -212,10 +15,10 @@
         <strong>Veterinaria LOTSO</strong>
       </div>
       <nav class="nav">
-        <a href="#inicio">INICIO</a>
-        <a href="#nosotros">NOSOTROS</a>
-        <a href="#servicios">SERVICIOS</a>
-        <a href="#encuentranos">ENCUÉNTRANOS</a>
+        <a href="index.html">INICIO</a>
+        <a href="nosotros.html">NOSOTROS</a>
+        <a href="servicios.html">SERVICIOS</a>
+        <a href="encuentranos.html">ENCUÉNTRANOS</a>
       </nav>
     </div>
   </header>
@@ -324,8 +127,9 @@
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>
-    © 2025 Veterinaria LOTSO — Todos los derechos reservados
+    <p>© 2024 Veterinaria Lotso | Todos los derechos reservados</p>
   </footer>
 </body>
 </html>
